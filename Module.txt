@@ -1,0 +1,11 @@
+﻿Name: Demo.Movies
+AntiForgery: enabled
+Author: Westley Harris
+Website: http://orchardproject.net
+Version: 1.0
+OrchardVersion: 1.4
+Description: Demo Movie database site
+Features:
+    Demo.Movies:
+        Description: Description for feature Demo.Movies.
+		Dependencies: Orchard.Taxonomies
