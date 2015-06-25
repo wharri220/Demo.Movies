@@ -19,12 +19,12 @@
 </fieldset>
 <fieldset>
     <legend>@T("Actors")</legend>
-    @Html.DropDownList("AllActors", new SelectList(Model.AllActors, "Id", "Name"), "")
+    @Html.DropDownList("AllActors", new SelectList(Model.AllActors, "Id", "Name"), "Select Actor To Add")
     <input type="button" id="AddActor" value="Add"/>
     <ul id="actorList">
         @foreach (var actorId in Model.Actors)
         {
-            <li data-actorId="@actorId"><a href="" class="delete">X</a>Test</li>
+            <li data-actorId="@actorId"><a href="" class="delete"> X </a>@(Model.AllActors.FirstOrDefault(actor => actor.Id == actorId).Name)</li>
         }
 
         @foreach (var actorId in Model.Actors)
@@ -51,13 +51,9 @@
                 }
             });
 
-            $(".delete").click(function () {
-                alert("got it");
-            });
-
             $(document).on("click","#actorList .delete", function () {
                 var $actorListItem = $(this).parent("li");
-                var actorIdToDelete = $actorListItem.data("actorId");
+                var actorIdToDelete = $actorListItem.attr("data-actorId");
                 $("#Movie_Actors[value='" + actorIdToDelete + "']").remove();
                 $actorListItem.remove();
                 return false;

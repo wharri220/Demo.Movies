@@ -2,6 +2,7 @@
 using Orchard.ContentManagement;
 using Demo.Movies.Models;
 using Demo.Movies.ViewModels;
+using Demo.Movies.Services;
 using Orchard.Data;
 using System.Linq;
 
@@ -10,10 +11,12 @@ namespace Demo.Movies.Drivers
     public class MoviePartDriver : ContentPartDriver<MoviePart>
     {
         private IRepository<ActorRecord> _actorRepository;
+        private IMovieService _movieService;
 
-        public MoviePartDriver(IRepository<ActorRecord> actorRepository)
+        public MoviePartDriver(IRepository<ActorRecord> actorRepository, IMovieService movieService)
         {
             _actorRepository = actorRepository;
+            _movieService = movieService;
         }
 
         protected override string Prefix
@@ -37,7 +40,9 @@ namespace Demo.Movies.Drivers
         //POST
         protected override DriverResult Editor(MoviePart part, IUpdateModel updater, dynamic shapeHelper)
         {
-            updater.TryUpdateModel(part, Prefix, null, null);
+            var viewModel = new MovieEditViewModel();
+            updater.TryUpdateModel(viewModel, Prefix, null, new []{"AllActors"});
+            _movieService.UpdateMovie(viewModel, part);
             return Editor(part, shapeHelper);
         }
 

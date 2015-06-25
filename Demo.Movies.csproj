@@ -97,6 +97,8 @@
     <Compile Include="Models\MoviePart.cs" />
     <Compile Include="Models\MoviePartRecord.cs" />
     <Compile Include="Models\MPAARating.cs" />
+    <Compile Include="Services\IMovieService.cs" />
+    <Compile Include="Services\MovieService.cs" />
     <Compile Include="ViewModels\MovieEditViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
