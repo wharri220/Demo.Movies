@@ -19,8 +19,8 @@ namespace Demo.Movies
 
         private void BuildMenu(NavigationItemBuilder menu)
         {
-            menu.Add(T("List"), "1.0", item => item.Action("List", "Admin", new { area = "Contents", id = "Movie" }));
-            menu.Add(T("New Movie"), "1.1", item => item.Action("Create", "Admin", new { area = "Contents", id = "Movie" }));
+            menu.Add(T("List"), "1.1", item => item.Action("List", "Admin", new { area = "Contents", id = "Movie" }));
+            menu.Add(T("New Movie"), "1.2", item => item.Action("Create", "Admin", new { area = "Contents", id = "Movie" }));
             menu.Add(T("Actors"), "2.0", item => item.Action("Index", "ActorsAdmin", new { area = "Demo.Movies" }));
         }
     }
