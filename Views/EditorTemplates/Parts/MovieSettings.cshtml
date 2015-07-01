@@ -1,0 +1,8 @@
+﻿@model Demo.Movies.Models.MovieSettingsPart
+
+<fieldset>
+    <legend>Demo Movies</legend>
+    @Html.LabelFor(m => m.TMDB_ApiKey, T("Api Key"))
+    @Html.TextBoxFor(m => m.TMDB_ApiKey)
+    <span class="hint">@T("This is your API key for themoviedb.org. You will need to get it from there.")</span>
+</fieldset>

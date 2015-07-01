@@ -1,5 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Placement>
+  <Place Parts_Common_Metadata="-"/>
+  <Place Parts_Common_Metadata_Summary="-"/>
   <Place Parts_Movie_Edit="Content:10"/>
-  <Place Parts_Movie="Content:5" />
+  <Place Parts_Movie_SiteSettings="Content:1" />
+  
+  <Match ContentType="Movie">
+    <Match DisplayType="Detail">
+      <Place Parts_Movie="Content:5" />
+    </Match>
+    <Match DisplayType="Summary">
+      <Place Parts_Movie="-" />
+    </Match>  
+  </Match>
 </Placement>

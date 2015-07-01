@@ -64,6 +64,34 @@ namespace Demo.Movies
                                 {"area", "Demo.Movies"}
                             },
                             new MvcRouteHandler())
+                },
+                new RouteDescriptor{
+                    Route = new Route(
+                            "Admin/Movies/Import",
+                            new RouteValueDictionary{
+                                {"area", "Demo.Movies"},
+                                {"controller", "MovieLookup"},
+                                {"action", "Import"}
+                            },
+                            new RouteValueDictionary(),
+                            new RouteValueDictionary{
+                                {"area", "Demo.Movies"}
+                            },
+                            new MvcRouteHandler())
+                },
+                new RouteDescriptor{
+                    Route = new Route(
+                            "Admin/Movies/Lookup",
+                            new RouteValueDictionary{
+                                {"area", "Demo.Movies"},
+                                {"controller", "MovieLookup"},
+                                {"action", "Index"}
+                            },
+                            new RouteValueDictionary(),
+                            new RouteValueDictionary{
+                                {"area", "Demo.Movies"}
+                            },
+                            new MvcRouteHandler())
                 }
             };
         }
